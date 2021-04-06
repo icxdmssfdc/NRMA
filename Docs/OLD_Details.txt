@@ -1,0 +1,101 @@
+GMS :
+Application URL : https://siebel.sit.nrmasx.com.au/fins_enu/
+Username : TEST11
+Password : Nrma@12345
+ 
+Database :
+Username : CRMI_READ
+Password : CRMI_READ
+
+
+Username : INNOVACX / INNOVACX
+ 
+TNS :
+CRMI =
+(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = alfa-scan.mynrma.com)(PORT = 1521)) 
+(CONNECT_DATA = (SERVER = DEDICATED) (SERVICE_NAME = CRMI_ALFA.MYNRMA.COM) ) )
+
+
+
+===========================================================================
+
+CFG :
+CRMD =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = goedxdb01.nrmasx.com.au)(PORT = 1522))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = GOEDC1)
+    )
+  )
+=============================================================================
+NRAMA RDC ::
+connection ip : 10.2.0.1
+UN : MYNRMA\CHJAIN
+PWD : nrma@12345
+
+“User Login ID:
+GACHILAG
+Password:
+Icx@nrma18”
+
+Username : INNOVACX / INNOVACX4tesla
+
+=========================================================
+CheckPoint :
+NRAO / SuperDooper18
+
+========================================================
+45_BOX DB
+system/Oracle123
+
+45.114.142.43
+1521
+
+=======================================================
+45 box RDC :
+IP - 45.114.142.43:41798
+Administrator
+CXJrk64W#4c$
+
+Appln : SADMIN/M1NSADADMIN
+
+Siebel DB User :==>> SIEBEL/S1E8ELADMIN
+
+http://45.114.142.43/loyalty_enu/start.swe
+
+E:\Siebel\8.2.2.14.0\ses\siebsrvr\ADMIN
+
+
+FTP
+innovacx
+Ran@inF8@%
+
+
+=========================================================
+
+Oracle Services :
+
+stop:-
+Siebsrvr
+Gateway
+IIS Admin Server
+
+start:-
+Gateway
+Siebesrvr
+IIS
+=========================================================
+RANJITHA USER ROW_ID : 1-4Z2TPB
+ ORACLE SUPPORT Ranjitha.srinidhi@innovacx.com/ Innovacx@1
+======================================
+
+SIEBDB =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = 45.114.142.43)(PORT = 1521))
+    
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = SIEBDB)
+    )
+  )

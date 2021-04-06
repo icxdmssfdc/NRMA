@@ -1,0 +1,249 @@
+ssh -i /home/oracle/.ssh/goedmas06 oracle@goedmas06 /home/oracle/OCH/NRMA_AUTO_CHECK_DB_CONN.sh 
+
+ssh -i /home/oracle/.ssh/goeumas01 oracle@goeumas01 /backup/INNOVACX/OCH/SCRIPTS/NRMA_AUTO_CHECK_DB_CONN.sh OCHU /u01/app/oracle/product/12.1.0.2 INNOVACX nrma4did /backup/INNOVACX/OCH/LOG goeumas01 /home/oracle/.profile_OCHU_11gR2
+
+ssh -i /home/oracle/.ssh/${DID_GMS_REMOTEHOST} ${DIDAdmin}@${DID_GMS_REMOTEKEY} ${DID_GMS_SCRIPT_PATH}/NRMA_AUTO_CHECK_DB_CONN.sh ${DID_GMS_ORACLE_SID} ${DID_GMS_ORACLE_HOME} ${DIDUser} ${DIDPaswd} ${DID_GMS_LOG_PATH} ${DID_GMS_REMOTEHOST} ${DID_GMS_ENV_PROF_PATH}
+
+#ssh -i /home/oracle/.ssh/goeucas01 oracle@goeucas01 /backup/INNOVACX/SCRIPTS/NRMA_AUTO_CHECK_DB_CONN.sh CRMU /u01/app/oracle/product/12.1.0.2 INNOVACX innovacxgms2018 /backup/INNOVACX/LOG goeucas01 /home/oracle/.profile_CRMU_11gR2
+
+OCH ::==>>
+
+
+ssh -i /home/oracle/.ssh/${DID_OCH_REMOTEHOST} ${DIDAdmin}@${DID_OCH_REMOTEKEY} ${DID_OCH_SCRIPT_PATH}/NRMA_OCH_EIM_JOB_RANGE.sh ${DID_OCH_Gateway} ${DID_OCH_Enterprise} ${DID_OCH_ServerName} ${DIDUser} ${DIDPaswd} ${DID_OCH_IfbPath}/${DIDIfb} ${BatchNumberCHILD} ${DID_OCH_LOG_PATH} ${DID_OCH_ENV_PROF_PATH} 
+sleep 10
+
+
+ssh -i /home/oracle/.ssh/goeumas01 oracle@goeumas01
+
+
+cd /backup/INNOVACX/OCH/SCRIPTS
+
+ssh -i /home/oracle/.ssh/goeumas01 oracle@goeumas01 /backup/INNOVACX/SCRIPTS//NRMA_OCH_EIM_JOB_RANGE.sh ${DID_OCH_Gateway} ${DID_OCH_Enterprise} ${DID_OCH_ServerName} ${DIDUser} ${DIDPaswd} ${DID_OCH_IfbPath}/${DIDIfb} ${BatchNumberCHILD} ${DID_OCH_LOG_PATH} ${DID_OCH_ENV_PROF_PATH}
+
+ssh -i /home/oracle/.ssh/goeumas01 oracle@goeumas01
+
+. .profile_OCHU_11gR2
+
+cd /u01/app/siebel/siebsrvr/
+
+. ./siebenv.sh
+
+srvrmgr /g goeumasgt /e UCM_UAT /s SBLSRVR1 /u NRMA_DID /p NRMA1234
+
+
+srvrmgr /g goeumasgt /e UCM_UAT /s SBLSRVR1 /u NRMA_DID /p NRMA1234
+
+run task for component EIM with config=OCH_IFB_FILES/OCH_ORGEXT_UPDATE_IFB_OU.ifb, ExtendedParams="BATCH_NUMBER=2770001", ErrorFlags=1, SQLFlags=8, TraceFlags=3
+
+run task for component EIM with config=OCH_IFB_FILES/OCH_ORGEXT_UPDATE_IFB_OU.ifb, ExtendedParams="BATCH_NUMBER=2770002-2770019", ErrorFlags=1, SQLFlags=8, TraceFlags=3
+
+run task for component EIM with Batch=2770002, config=OCH_IFB_FILES/GMS_ORTE_IFB.ifb, ErrorFlags=1, SQLFlags=8, TraceFlags=3
+
+============================================================================================================================
+
+
+SBLSRVR_NAME  SBLSRVR_GROUP_NAME  HOST_NAME                INSTALL_DIR               SBLMGR_PID  SV_DISP_STATE  SBLSRVR_STATE  START_TIME           END_TIME  SBLSRVR_STATUS
+------------  ------------------  -----------------------  ------------------------  ----------  -------------  -------------  -------------------  --------  ---------------------------------
+SBLSRVR1                          goeucas03.nrmasx.com.au  /u04/app/siebel/siebsrvr  9627        Running        Running        2018-11-19 19:44:52            16.7.0.0 [23057] LANG_INDEPENDENT
+SBLSRVR2                          goeucas01.nrmasx.com.au  /u01/app/siebel/siebsrvr  8860        Running        Running        2018-11-19 19:51:00            16.7.0.0 [23057] LANG_INDEPENDENT
+SBLSRVR3                          goeucas02.nrmasx.com.au  /u01/app/siebel/siebsrvr  26242       Running        Running        2018-11-19 19:50:25            16.7.0.0 [23057] LANG_INDEPENDENT
+
+E09 GMS UI Login
+TEST_DID / Nov@12345
+
+https://siebel.uat.nrmasx.com.au/fins_enu/
+
+Enter* : GMS_UAT
+Gaetway name : goeucasgw
+
+Server : SBLSRVR2
+port :2320
+
+/u01/app/siebel/siebsrvr/enterprises/GMS_UAT/SBLSRVR2
+
+
+cp EIM_0306_320864259.log /backup/INNOVACX
+
+GMS ::==>>
+
+ssh -i /home/oracle/.ssh/goeucas01 oracle@goeucas01 /backup/INNOVACX/SCRIPTS/NRMA_AUTO_CHECK_DB_CONN.sh CRMU /u01/app/oracle/product/12.1.0.2 INNOVACX nrma4did /backup/INNOVACX/LOG goeucas01 /home/oracle/.profile_CRMU_11gR2
+
+
+
+
+
+ssh -i /home/oracle/.ssh/goeucas03 oracle@goeucas03  ---- srvr1    -not connecting to ssh 
+ 
+ 
+ssh -i /home/oracle/.ssh/goeucas02 oracle@goeucas02  -- srvr3
+
+
+ssh -i /home/oracle/.ssh/goeumas01 oracle@goeumas01
+
+
+ssh -i /home/oracle/.ssh/goescas01 oracle@goescas01  ------ SIT srvr2  
+
+ls -lart
+
+. .profile_CRMU_11gR2
+
+
+cd /u01/app/siebel/siebsrvr
+
+. ./siebenv.sh
+
+srvrmgr /g goefcasgw /e GMS_UAT /s SBLSRVR1 /u NRMA_DID /p DIDTEST123
+
+cd /backup/INNOVACX/SCRIPTS
+
+
+sh NRMA_GMS_INSERT_ORGEXT_OU_NUM_SH.sh NRMADID innovacx4did CRMU /backup/INNOVACX/SQL /backup/INNOVACX/LOG 100000 '17-DEC-2018' /home/oracle/.profile_CRMU_11gR2
+
+
+
+
+sh NRMA_MASTER_ADDR_PER_UNMASK_SH.sh NRMADID innovacx4did CRMU /backup/INNOVACX/SQL /backup/INNOVACX/LOG /home/oracle/.profile_CRMU_11gR2 05-DEC-2018 10
+
+sh NRMA_GMS_MASTER_UNMASK_ADDR_PER.sh NRMADID innovacx4did CRMU /backup/INNOVACX/LOG /backup/INNOVACX/DATA /home/oracle/.profile_CRMU_11gR2 05-DEC-2018
+
+
+
+sh NRMA_DB_STATS.sh NRMA_DID DIDTEST123 CRMU /backup/INNOVACX/SQL /backup/INNOVACX/LOG S_ASSET /home/oracle/.profile_CRMU_11gR2 /backup/INNOVACX/SCRIPTS 
+
+
+sh NRMA_GMS_INSERT_ASSET_SH.sh NRMADID innovacx4did CRMU /backup/INNOVACX/SQL /backup/INNOVACX/LOG 900000 /home/oracle/.profile_CRMU_11gR2
+
+
+sh NRMA_MASTER_S_ORG_EXT_UK_MASK_SH.sh NRMADID innovacx4did CRMU /backup/INNOVACX/SQL /backup/INNOVACX/LOG /home/oracle/.profile_CRMU_11gR2 100
+
+
+NRMA_GMS_INSERT_ORDER_SH
+
+cd /backup/INNOVACX/SCRIPTS
+
+
+srvrmgr /g goeucasgw /e GMS_UAT /s SBLSRVR1 /u NRMA_DID /p DIDTEST123
+
+srvrmgr /g goeucasgw /e GMS_UAT /s SBLSRVR3 /u NRMA_DID /p DIDTEST123
+
+
+
+
+run task for component EIM with config=innovacx/GMS_ORGEXT_UPDATE_IFB_OU.ifb, ExtendedParams="BATCH_NUMBER=2770002-2770019", ErrorFlags=1, SQLFlags=8, TraceFlags=3
+
+
+
+
+run task for component EIM with Batch=2770002, config=innovacx/GMS_ORGEXT_UPDATE_IFB.ifb, ErrorFlags=1, SQLFlags=8, TraceFlags=3
+
+
+run task for component EIM with Batch=2770031, config=innovacx/GMS_CONTACT_UPDATE_IFB.ifb, ErrorFlags=1, SQLFlags=8, TraceFlags=3
+
+
+
+run task for component EIM with Batch=22112018, config=innovacx/GMS_ORDER_ITEM_FK_UPDATE.ifb, ErrorFlags=1, SQLFlags=8, TraceFlags=3
+
+
+srvrmgr /g goeucasgw /e GMS_UAT /s SBLSRVR2 /u NRMA_DID /p DIDTEST123 /c "run task for component EIM with config=innovacx/GMS_EVTACT_FK_UPDATE.ifb, ExtendedParams=\"BATCH_NUMBER=100001-100010\", ErrorFlags=1, SQLFlags=8, TraceFlags=3"
+
+
+
+SQL Id: 8uyk5ds5bbnaq 
+SQL Execution Id: 33554958 
+SQL Execution Start: 26-Nov-2018 01:54:44
+
+srvrmgr /g goeucasgw /e GMS_UAT /s SBLSRVR2 /u NRMA_DID /p DIDTEST123
+
+--AppObjMgr
+
+kill comp EIM for server SBLSRVR2
+
+
+Startup comp EIM for server SBLSRVR2
+
+
+list task for comp EIM
+list comp
+stop comp EIM for server SBLSRVR2
+
+
+list active tasks for comp EIM
+
+set server SBLSRVR2
+list comp
+
+list evtloglvl for comp EIM
+change evtloglvl %=1 for comp EIM
+
+
+list evtloglvl for comp eautoObjMgr_enu
+change evtloglvl %=5 for comp eautoObjMgr_enu
+
+--EAIObjMgr
+--AppObjMgr
+
+
+srvrmgr /g goeucasgw /e GMS_UAT /s SBLSRVR2 /u INNOVACX /p innovacxgms2018
+
+sh NRMA_DATA_RETENTION_START_TEST_SH.sh NRMADID innovacx4did CRMU /backup/INNOVACX/SQL /backup/INNOVACX/LOG /home/oracle/.profile_CRMU_11gR2
+
+
+NRMA_DATA_RETENTION_START_TEST
+
+ls -lart
+
+. .profile_OCHU_11gR2
+
+ echo $ORACLE_HOME
+
+ echo $ORACLE_SID
+ 
+
+DIDEnterprise - 
+
+DIDGateway - 
+
+DIDServerName -
+
+
+DID_GMS_ENV_PROF_PATH - /home/oracle/.profile_CRMU_11gR2
+
+
+DID_GMS_ORACLE_HOME - /u01/app/oracle/product/12.1.0.2
+
+
+DID_GMS_ORACLE_SID - CRMU
+
+
+DIDIfbPath - innovacx
+
+
+
+cp -R Src_directory Dest_directory
+
+cp -R directory/ foo
+
+
+list active tasks for comp EIM
+set server SBLSRVR1
+list comp
+list evtloglvl for comp EIM
+change evtloglvl %=1 for comp EIM
+
+
+
+
+NRMA_DATA_MASKING_RELATED_DATA_INS
+
+
+sh NRMA_DB_STATS.sh NRMA_DID DIDTEST123 CRMU /backup/INNOVACX/SQL /backup/INNOVACX/LOG EIM_ORDER_ITEM /home/oracle/.profile_CRMU_11gR2 /backup/INNOVACX/SCRIPTS 
+
+cd /backup/INNOVACX/SCRIPTS
+
+
+sh NRMA_DATA_MASKING_RELATED_DATA_INS.sh NRMADID innovacx4did CRMU /backup/INNOVACX/SQL /backup/INNOVACX/LOG /backup/INNOVACX/DATA /backup/INNOVACX/CTL_FILES /home/oracle/.profile_CRMU_11gR2 /backup/INNOVACX/SCRIPTS 
+
+
+SQL Id: 8uyk5ds5bbnaq 
+SQL Execution Id: 33554957 
+SQL Execution Start: 26-Nov-2018 01:32:23

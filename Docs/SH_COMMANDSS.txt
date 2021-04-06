@@ -1,0 +1,71 @@
+ssh -i /home/oracle/.ssh/goedmas06 oracle@goedmas06 /home/oracle/OCH/NRMA_AUTO_CHECK_DB_CONN.sh 
+
+ssh -i /home/oracle/.ssh/goeumas01 oracle@goeumas01 /backup/INNOVACX/OCH/SCRIPTS/NRMA_AUTO_CHECK_DB_CONN.sh OCHU /u01/app/oracle/product/12.1.0.2 INNOVACX nrma4did /backup/INNOVACX/OCH/LOG goeumas01 /home/oracle/.profile_OCHU_11gR2
+
+
+
+OCH ::==>>
+
+
+ssh -i /home/oracle/.ssh/${DID_OCH_REMOTEHOST} ${DIDAdmin}@${DID_OCH_REMOTEKEY} ${DID_OCH_SCRIPT_PATH}/NRMA_OCH_EIM_JOB_RANGE.sh ${DID_OCH_Gateway} ${DID_OCH_Enterprise} ${DID_OCH_ServerName} ${DIDUser} ${DIDPaswd} ${DID_OCH_IfbPath}/${DIDIfb} ${BatchNumberCHILD} ${DID_OCH_LOG_PATH} ${DID_OCH_ENV_PROF_PATH} 
+sleep 10
+
+
+ssh -i /home/oracle/.ssh/goeumas01 oracle@goeumas01
+
+
+
+ssh -i /home/oracle/.ssh/goeumas01 oracle@goeumas01 /backup/INNOVACX/SCRIPTS//NRMA_OCH_EIM_JOB_RANGE.sh ${DID_OCH_Gateway} ${DID_OCH_Enterprise} ${DID_OCH_ServerName} ${DIDUser} ${DIDPaswd} ${DID_OCH_IfbPath}/${DIDIfb} ${BatchNumberCHILD} ${DID_OCH_LOG_PATH} ${DID_OCH_ENV_PROF_PATH}
+
+
+. .profile_OCHU_11gR2
+
+cd /u01/app/siebel/siebsrvr/
+
+. ./siebenv.sh
+
+
+srvrmgr /g goeumasgt:2320 /e UCM_UAT /s SBLSRVR1 /u INNOVACX /p nrma4did
+
+============================================================================================================================
+
+
+
+
+GMS ::==>>
+
+ssh -i /home/oracle/.ssh/goeucas01 oracle@goeucas01 /backup/INNOVACX/SCRIPTS/NRMA_AUTO_CHECK_DB_CONN.sh CRMU /u01/app/oracle/product/12.1.0.2 INNOVACX nrma4did /backup/INNOVACX/LOG goeucas01 /home/oracle/.profile_CRMU_11gR2
+
+ssh -i /home/oracle/.ssh/goeucas01 oracle@goeucas01
+
+ls -lart
+
+. .profile_CRMU_11gR2
+
+srvrmgr /g goeucasgt:2320 /e GMS_UAT /s SBLSRVR2 /u INNOVACX /p innovacxgms2018
+
+sh NRMA_DATA_RETENTION_START_TEST_SH.sh NRMADID innovacx4did CRMU /backup/INNOVACX/SQL /backup/INNOVACX/LOG /home/oracle/.profile_CRMU_11gR2
+
+
+NRMA_DATA_RETENTION_START_TEST
+
+ls -lart
+
+. .profile_OCHU_11gR2
+
+ echo $ORACLE_HOME
+
+ echo $ORACLE_SID
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+select count(*) from siebel.s_contact; -- 3263931
+
+SELECT COUNT(DISTINCT OWNER_CON_ID) FROM SIEBEL.S_ASSET WHERE PROD_ID IS NOT NULL; -- 2919067
+
+SELECT  COUNT(distinct c.row_id)
+ FROM SIEBEL.S_ASSET A,SIEBEL.S_CONTACT C,SIEBEL.S_CONTACT_X X, SIEBEL.S_PROD_INT P
+WHERE A.OWNER_CON_ID = C.ROW_ID AND C.ROW_ID = X.PAR_ROW_ID(+)
+AND A.PROD_ID = P.ROW_ID AND P.PART_NUM='CC';  -- 1602863
+
+select count(distinct(t3.row_id)) from siebel.s_asset t1, siebel.s_prod_int t2, siebel.s_contact t3
+where t1.prod_id = t2.row_id
+and t1.owner_con_id=t3.row_id and t2.part_num not in('CC','PROMCC','MEM') 
+and t1.owner_con_id in (select a.owner_con_id from siebel.s_asset a,siebel.s_prod_int p
+where p.part_num = 'CC' and a.prod_id=p.row_id ); -- 445150
+
+
+select count(distinct(t3.row_id)) from siebel.s_asset t1, siebel.s_prod_int t2, siebel.s_contact t3
+where t1.prod_id = t2.row_id
+and t1.owner_con_id=t3.row_id and t2.part_num not in('CC','PROMCC','MEM') and t1.status_cd='Active'
+and t1.owner_con_id in (select a.owner_con_id from siebel.s_asset a,siebel.s_prod_int p
+where p.part_num = 'CC' and a.prod_id=p.row_id ); --- 243685
+
+select count(distinct(t3.row_id)) from siebel.s_asset t1, siebel.s_prod_int t2, siebel.s_contact t3
+where t1.prod_id = t2.row_id
+and t1.owner_con_id=t3.row_id and t2.part_num not in('CC','PROMCC','MEM') 
+and t1.owner_con_id in (select a.owner_con_id from siebel.s_asset a,siebel.s_prod_int p
+where p.part_num = 'CC' and a.prod_id=p.row_id and t1.status_cd='Active'); ---- 243685
+
+
+
+select t2.part_num,count(distinct(t3.row_id)) from siebel.s_asset t1, siebel.s_prod_int t2, siebel.s_contact t3
+where t1.prod_id = t2.row_id
+and t1.owner_con_id=t3.row_id and t2.part_num not in('CC','PROMCC','MEM') and t1.status_cd='Active'
+and t1.owner_con_id in (select a.owner_con_id from siebel.s_asset a,siebel.s_prod_int p
+where p.part_num = 'CC' and a.prod_id=p.row_id)
+group by t2.part_num
+order by t2.part_num;
+
+
+select t2.part_num,count(distinct(t3.row_id)) from siebel.s_asset t1, siebel.s_prod_int t2, siebel.s_contact t3
+where t1.prod_id = t2.row_id
+and t1.owner_con_id=t3.row_id and t2.part_num not in('CC','PROMCC','MEM') and t1.status_cd='Active'
+and t1.owner_con_id in (select a.owner_con_id from siebel.s_asset a,siebel.s_prod_int p
+where p.part_num = 'CC' and a.prod_id=p.row_id and a.status_cd='Active')
+group by t2.part_num
+order by t2.part_num;
+
+
+
+select t2.part_num,count(distinct(t3.row_id)) from siebel.s_asset t1, siebel.s_prod_int t2, siebel.s_contact t3
+where t1.prod_id = t2.row_id
+and t1.owner_con_id=t3.row_id and t2.part_num not in('CC') and t1.status_cd='Active'
+and t1.owner_con_id in (select a.owner_con_id from siebel.s_asset a,siebel.s_prod_int p
+where p.part_num = 'CC' and a.prod_id=p.row_id)
+group by t2.part_num
+order by t2.part_num;
+
+
+SELECT COUNT(DISTINCT OWNER_CON_ID) FROM SIEBEL.S_ASSET WHERE PROD_ID IS NOT NULL;

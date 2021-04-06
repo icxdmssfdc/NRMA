@@ -1,0 +1,60 @@
+Putty details:
+
+1. Host name
+goefjnk01.nrmasx.com.au
+
+2. user - oracle
+
+3. private key
+
+---------------------------
+steps to restart:
+
+ cd /u01/app
+ ps -elf|grep java  === 4th column is PID
+ kill PID
+ rm nohup.out
+ ./startjenkins.sh
+ top  == gives CPU details
+----------------------------------
+
+Need to take backup regularly
+
+cp -R /home/oracle/.jenkins/config.xml /backup/INNOVACX/JenkinsConfigJobBckup_18_dec
+
+cp -R /home/oracle/.jenkins/jobs /backup/INNOVACX/JenkinsJobBckup_18_dec
+
+ls -al ~/.ssh --> to check keys
+
+
+# tar -cvf /backup/INNOVACX/Jenkins_Backup/jen_backup_19Dec.tar /backup/INNOVACX/Jenkins_Backup/JenkinsJobBckup_19Dec
+
+# tar -cvzf images.tar.gz ~/Pictures
+
+gzip -r jen_backup_19Dec.tar.gz
+------------------------------
+
+## Untar files in Current Directory ##
+# tar -xvf public_html-14-09-12.tar
+
+## Untar files in specified Directory ##
+# tar -xvf public_html-14-09-12.tar -C /home/public_html/videos/
+
+# tar -xvf images.tar
+# tar -xvzf images.tar.gz
+
+cp -R /home/oracle/.jenkins/config.xml /backup/INNOVACX/Jenkins_Backup/JenkinsConfigJobBckup_19Dec
+
+cp -R /home/oracle/.jenkins/jobs /backup/INNOVACX/Jenkins_Backup/JenkinsJobBckup_19Dec
+
+
+refrence 
+
+parameterized-trigger.jpi.disabled
+
+
+rm -rf Jen_jobs_backup_14_DEC
+
+ 
+
+

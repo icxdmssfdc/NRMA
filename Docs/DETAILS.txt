@@ -1,0 +1,165 @@
+CRMDEV =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = NRMAGSODA2.mynrma.com)(PORT = 1526))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = CRMDEV)
+    )
+  )
+  
+  UN/PWD ==>> INNOVACX/innovacx4did
+
+http://goedcas07.nrmasx.com.au:7777/fins_enu/start.swe?
+
+=====================================================================================================
+
+OCHU =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = GSUATODA-scan.mynrma.com)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = OCHU_GSUATODA.mynrma.com)
+    )
+  )
+  
+  
+  INNOVACX/nrma4did
+  nrma4did
+  
+  
+ NRMA_DID/NRMA1234
+
+
+https://goeumas01.nrmasx.com.au/ucm_enu/start.swe?
+ https://goeumas.nrmasx.com.au/ucm_enu/
+
+==>> INNOVACX
+nrma4did
+  
+
+GMS ==>>
+
+CRMU=(DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = GSUATODA-scan.mynrma.com)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = CRMU_GSUATODA.mynrma.com)
+    )
+  )
+
+https://login.uat.nrmasx.com.au/oam/server/auth_cred_submit
+
+E09 GMS UI Login
+TEST_DID / 
+Nov@12345
+
+GSUATODA-scan.mynrma.com
+
+CRMU_GSUATODA.mynrma.com
+
+NRMA_DID/DIDTEST123
+@CRMU
+
+INNOVACX
+innovacxgms2018
+
+=========================================================================================
+
+
+ALM
+
+URL : https://almgsuqcmt1255.saas.hpe.com/qcbin/start_a.jsp 
+Domain : GOE
+Project : GOE_Project
+
+USERNAME - RSRINIDHI  ranjitha.srinidhi
+Password - Alm@2019
+
+=============================================================================================
+
+NFT ====>>
+
+URL : https://siebel-nft.nrmasx.com.au/fins_enu/
+
+URL : https://siebel-nft.nrmasx.com.au/fins_enu/
+
+TEST_DID / Nrma@0011
+
+
+
+Database Read only access:
+
+NRMA_DID / Nrma123
+
+
+
+Tns:
+
+CRMF =
+
+(DESCRIPTION =
+
+(ADDRESS = (PROTOCOL = TCP)(HOST = alfa-scan.mynrma.com)(PORT = 1521))
+
+(CONNECT_DATA =
+
+(SERVER = DEDICATED)
+
+(SERVICE_NAME = CRMF_TAF.mynrma.com)
+
+(FAILOVER_MODE=
+
+(TYPE=select)
+
+(METHOD=basic))
+
+)
+
+)
+
+TEST_DID / 
+Nrma@123
+
+Database Read only access:
+NRMA_DID / Nrma123
+NRMADID/nrma4did
+
+aavinash/Mr.perfect1
+
+Tns:
+CRMF =
+(DESCRIPTION =
+(ADDRESS = (PROTOCOL = TCP)(HOST = alfa-scan.mynrma.com)(PORT = 1521))
+(CONNECT_DATA =
+(SERVER = DEDICATED)
+(SERVICE_NAME = CRMF_TAF.mynrma.com)
+(FAILOVER_MODE=
+(TYPE=select)
+(METHOD=basic))
+)
+)
+
+
+
+OCHF_ALFA =
+  (DESCRIPTION =
+    (ADDRESS = (PROTOCOL = TCP)(HOST = alfa-scan.mynrma.com )(PORT = 1521))
+   (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = OCHF_ALFA.MYNRMA.COM)
+    )
+  )
+
+NRMADID/nrma4did
+NRMA_DID/nrma4did
+
+
+======================================================================
+
+GFS :==>>
+ NRMAGSODA2.mynrma.com
+ 1521
+ GFSDEV3
+nrmadid/nrma4did
+
+

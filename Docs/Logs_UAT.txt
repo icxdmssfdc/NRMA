@@ -1,0 +1,77 @@
+
+ssh -i /home/oracle/.ssh/goeucas01 oracle@goeucas01  ------ srvr2  
+
+
+ssh -i /home/oracle/.ssh/goeucas03 oracle@goeucas03  ---- srvr1    -not connecting to ssh 
+ 
+ 
+ssh -i /home/oracle/.ssh/goeucas02 oracle@goeucas02  -- srvr3
+
+
+======================================================================
+
+
+ssh -i /home/oracle/.ssh/goeucas01 oracle@goeucas01
+
+cd /u01/app/siebel/siebsrvr
+
+. ./siebenv.sh
+
+cd /u01/app/siebel/siebsrvr/
+
+
+
+
+ifb_path ==>>
+cd /u01/app/siebel/siebsrvr/admin/innovacx
+
+log_path ==>>
+cd /u01/app/siebel/siebsrvr/enterprises/GMS_UAT/SBLSRVR2/log
+
+copying log file ==>>
+cp EIM_0750_786432003.log /backup/INNOVACX/SIEBEL_LOGS
+
+ ls -lrt FINSObj*
+
+
+-rw-r--r--. 1 oracle oinstall    29945 Nov 20 17:39 EIM_0866_908066819.log
+-rw-r--r--. 1 oracle oinstall    29945 Nov 20 17:45 EIM_0869_911212547.log
+-rw-r--r--. 1 oracle oinstall    29945 Nov 20 17:48 EIM_0871_913309699.log
+-rw-r--r--. 1 oracle oinstall    29945 Nov 20 17:46 EIM_0873_915406851.log
+-rw-r--r--. 1 oracle oinstall    25436 Nov 20 17:46 EIM_0875_917504003.log
+-rw-r--r--. 1 oracle oinstall     4058 Nov 20 18:01 EIM_0879_921698307.log
+
+
+
+ssh -i /home/oracle/.ssh/goeucas01 oracle@goeucas01
+
+ssh -i /home/oracle/.ssh/goeumas01 oracle@goeumas01
+
+cp EIM_1173_1229979651.log /backup/INNOVACX/SIEBEL_LOGS
+
+
+cd /u01/app/siebel/siebsrvr/enterprises/GMS_UAT/SBLSRVR2
+
+
+cp /backup/INNOVACX/SIEBEL_LOGS/GMS_ORGEXT_UPDATE_IFB_OU.ifb  /u01/app/siebel/siebsrvr/admin/innovacx
+
+cd /u01/app/siebel/siebsrvr/admin/innovacx
+
+
+cp /backup/INNOVACX/OCH/IFB/OCH_DELETE_DQ_CON_KEY_IFB.ifb  /u01/app/siebel/siebsrvr/admin/OCH_IFB_FILES
+
+cd /u01/app/siebel/siebsrvr/admin/OCH_IFB_FILES
+
+
+
+cp -R /u01/app/siebel/siebsrvr/admin/innovacx /backup/INNOVACX/SIEBEL_LOGS
+
+
+
+9726160 - PAR_EVT_ID
+17       -  ACT_TMPL_ID
+2709     - APPT_REPT_APPT_ID
+1  - PREV_ACT_ID
+
+
+
